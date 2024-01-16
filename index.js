@@ -3,11 +3,14 @@ import express from 'express'
 import Razorpay from 'razorpay'
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv'
+import cors from 'cors'
 
 dotenv.config()
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
+
 
 const razorpay = new Razorpay({
   key_id: process.env.KEY_ID,
